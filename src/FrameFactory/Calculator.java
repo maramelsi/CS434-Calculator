@@ -2,6 +2,7 @@ package FrameFactory;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 import javax.swing.*;
 import javax.swing.event.*;
 
@@ -88,6 +89,19 @@ public class Calculator extends JFrame {
                 else
                 {
                     number = true;
+                    //Maram's code----------------------------------------
+
+                    ArrayList<Operation> operations = new ArrayList<Operation>();
+                    operations.add(new AddOperation());
+                    operations.add(new SubstractOperation());
+                    operations.add(new MultiplyOperation());
+                    operations.add(new DivideOperation());
+
+                    for(var opr: operations){
+                        if(opr.getType().equals(op)) opr.calculate(displayText);
+                    }
+
+                    //-------------------------------------------------
                     if (equalOp.equals("="))
                     {
                         op.setTotal(displayText);
