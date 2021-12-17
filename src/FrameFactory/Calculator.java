@@ -98,9 +98,12 @@ public class Calculator extends JFrame {
                     operations.add(new DivideOperation());
 
                     for(var opr: operations){
-                        if(opr.getType().equals(op)) opr.calculate(displayText);
+                        if(opr.getType().equals(op)){
+                            opr.calculate(displayText);
+                            textfield.setText("" + op.getTotalString());
+                            equalOp = e.getActionCommand();
+                        }
                     }
-
                     //-------------------------------------------------
                     if (equalOp.equals("="))
                     {
