@@ -100,7 +100,7 @@ public class Calculator extends JFrame {
                     for(var opr: operations){
                         if(opr.getType().equals(op)){
                             opr.calculate(displayText);
-                            textfield.setText("" + op.getTotalString());
+                            textfield.setText("" + opr.getTotalString());
                             equalOp = e.getActionCommand();
                         }
                     }
