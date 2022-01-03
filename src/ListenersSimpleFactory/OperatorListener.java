@@ -1,7 +1,7 @@
 package ListenersSimpleFactory;
 
 import CommandPattern.CommandHistory;
-import OperationStrategy.Operation;
+import OperationStrategy.*;
 import SingletonResult.Result;
 
 import javax.swing.*;
@@ -17,6 +17,12 @@ public class OperatorListener implements ActionListener {
 
     public OperatorListener(JTextField textField){
         this.textField = textField;
+        operations.add(new AddOperation());
+        operations.add(new SubstractOperation());
+        operations.add(new MultiplyOperation());
+        operations.add(new DivideOperation());
+        operations.add(new SinOperation());
+        operations.add(new CosOperation());
     }
 
     @Override
