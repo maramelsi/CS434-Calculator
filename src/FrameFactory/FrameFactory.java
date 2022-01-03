@@ -6,6 +6,5 @@ public abstract class FrameFactory {
         Frame frame = produceFrame(type);
         frame.create();
     }
-
     protected abstract Frame produceFrame(String type);
 }

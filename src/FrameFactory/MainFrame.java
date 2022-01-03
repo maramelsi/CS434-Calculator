@@ -1,17 +1,16 @@
-import FrameFactory.ConcreteFrameFactory;
-import FrameFactory.FrameFactory;
+package FrameFactory;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MainFrameEvent implements ActionListener {
+public class MainFrame implements ActionListener {
     FrameFactory frameFactory = new ConcreteFrameFactory();
     JButton buttonCalculator = new JButton("Calculator");
     JButton buttonUnit = new JButton("Unit Conversion");
 
     JFrame frame = new JFrame("Choose :");
-    MainFrameEvent(){
+    public MainFrame(){
         showGUI();
         buttonAction();
     }
@@ -28,9 +27,9 @@ public class MainFrameEvent implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == buttonCalculator)
-        frameFactory.createFrame("calculator");
+            frameFactory.createFrame("calculator");
         if(e.getSource() == buttonUnit)
-        frameFactory.createFrame("unit");
+            frameFactory.createFrame("unit");
     }
     public void showGUI(){
         // setting close operation

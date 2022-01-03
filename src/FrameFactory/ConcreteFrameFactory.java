@@ -1,6 +1,6 @@
 package FrameFactory;
 
-public class ConcreteFrameFactory extends FrameFactory{
+public class ConcreteFrameFactory extends FrameFactory {
 
     @Override
     protected Frame produceFrame(String type){
@@ -10,6 +10,6 @@ public class ConcreteFrameFactory extends FrameFactory{
         else if(type.equals("calculator"))
             frame = new CalculatorGUI();
 
-            return frame;
+        return frame;
     }
 }
