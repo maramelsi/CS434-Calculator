@@ -36,16 +36,6 @@ public class OperatorListener implements ActionListener {
             result.setDoubleResult(0);
         }*/
 
-       /* for (var operation : operations) {
-            if (operation.getType().equals(e.getActionCommand())) {
-                result.setDoubleResult(app.compute(operation, displayText));
-            }
-        }*/
-        //Operation currentOperation = new Operation();
-        //currentOperation.calculate(e.getActionCommand(), displayText);
-
-
-        //Operation.calculate(operations, e.getActionCommand(), displayText);
         app.compute(e.getActionCommand(), displayText);
         textField.setText("" + result.getDoubleResult());
 

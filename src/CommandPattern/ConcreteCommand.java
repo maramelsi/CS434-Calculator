@@ -1,10 +1,6 @@
 package CommandPattern;
 
-import FrameFactory.CalculatorGUI;
-import ListenersSimpleFactory.OperatorListener;
 import OperationStrategy.Operation;
-
-import java.util.ArrayList;
 
 public class ConcreteCommand implements Command{
     private String operation;
