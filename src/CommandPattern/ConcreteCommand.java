@@ -5,22 +5,12 @@ import ListenersSimpleFactory.OperatorListener;
 import OperationStrategy.Operation;
 
 public class ConcreteCommand implements Command{
-    private OperatorListener calculator;
     private Operation operation;
     private String operand;
 
-    public ConcreteCommand(OperatorListener calculator, Operation operation, String operand){
-        this.calculator = calculator;
+    public ConcreteCommand(Operation operation, String operand){
         this.operation = operation;
         this.operand = operand;
-    }
-
-    public OperatorListener getCalculator() {
-        return calculator;
-    }
-
-    public void setCalculator(OperatorListener calculator) {
-        this.calculator = calculator;
     }
 
     public Operation getOperation() {
@@ -41,23 +31,12 @@ public class ConcreteCommand implements Command{
 
     @Override
     public double execute() {
-        for(var opr: calculator.operations){
-            if(opr.getType().equals(operation.getType())){
-               return opr.calculate(operand);
-            }
-        }
-        return 0;
+        return operation.calculate(operand);
     }
 
     @Override
     public void unExecute() {
-        for(var opr: calculator.operations){
-            if(opr.getType().equals(undo(operation.getType()))){
-                opr.undo();
 
-
-            }
-        }
     }
     public String undo(String operator){
         String undo;

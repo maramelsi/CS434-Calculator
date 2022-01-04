@@ -1,21 +1,21 @@
 package OperationStrategy;
 
-public class CosOperation extends UnaryOperation{
-    public CosOperation(){
+import ListenersSimpleFactory.OperatorListener;
+
+public class CosOperation extends Operation {
+    public CosOperation() {
         super.type = "cos";
     }
-    @Override
-    public String getType(){
-        return "cos";
-    }
-    @Override
+   /* @Override
     public double calculate(double firstOperand) {
-        return Math.cos(firstOperand);
-    }
+        result.setDoubleResult(Math.cos(firstOperand));
+        return result.getDoubleResult();
+    }*/
 
     @Override
     public double calculate(String displayText) {
-        return Math.cos(convertToNumber(displayText));
+        result.setDoubleResult(Math.cos(convertToNumber(displayText)));
+        return result.getDoubleResult();
     }
 
 }

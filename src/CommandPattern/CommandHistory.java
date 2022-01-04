@@ -33,8 +33,7 @@ public class CommandHistory {
     }
 
     public double compute(Operation operation, String operand) {
-        Command command = new ConcreteCommand(
-                calculator, operation, operand);
+        Command command = new ConcreteCommand(operation, operand);
         history.add(command);
         current++;
         return command.execute();
