@@ -8,7 +8,7 @@ public class Result {
         return total ;
     }
     public void setDoubleResult(double total){
-       this.total = total;
+        this.total = total;
     }
     public static Result getInstance(){
         if(instance == null)
