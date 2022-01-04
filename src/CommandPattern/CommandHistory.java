@@ -28,8 +28,8 @@ public class CommandHistory {
         return 0;
     }
 
-    public double compute(ArrayList<Operation> operations, String operation, String operand) {
-        Command command = new ConcreteCommand(operations, operation, operand);
+    public double compute(String operation, String operand) {
+        Command command = new ConcreteCommand(operation, operand);
         history.add(command);
         current++;
         return command.execute();

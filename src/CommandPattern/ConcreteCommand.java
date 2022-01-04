@@ -7,12 +7,10 @@ import OperationStrategy.Operation;
 import java.util.ArrayList;
 
 public class ConcreteCommand implements Command{
-    ArrayList<Operation> operations;
     private String operation;
     private String operand;
 
-    public ConcreteCommand(ArrayList<Operation> operations, String operation, String operand){
-        this.operations = operations;
+    public ConcreteCommand(String operation, String operand){
         this.operation = operation;
         this.operand = operand;
     }
@@ -35,12 +33,12 @@ public class ConcreteCommand implements Command{
 
     @Override
     public double execute() {
-        return Operation.calculate(operations, operation, operand);
+        return Operation.calculate(operation, operand);
     }
 
     @Override
     public double unExecute() {
-        return Operation.calculate(operations, undo(operation), operand);
+        return Operation.calculate(undo(operation), operand);
     }
     public String undo(String operator){
         String undo;

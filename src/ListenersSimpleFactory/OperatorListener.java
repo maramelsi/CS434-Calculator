@@ -44,18 +44,9 @@ public class OperatorListener implements ActionListener {
         //Operation currentOperation = new Operation();
         //currentOperation.calculate(e.getActionCommand(), displayText);
 
-        ArrayList<Operation> operations = new ArrayList<>();
-        operations.add(new AddOperation());
-        operations.add(new SubstractOperation());
-        operations.add(new MultiplyOperation());
-        operations.add(new DivideOperation());
-        operations.add(new SinOperation());
-        operations.add(new CosOperation());
-        operations.add(new LogOperation());
-        operations.add(new COperation());
 
         //Operation.calculate(operations, e.getActionCommand(), displayText);
-        app.compute(operations, e.getActionCommand(), displayText);
+        app.compute(e.getActionCommand(), displayText);
         textField.setText("" + result.getDoubleResult());
 
         }
