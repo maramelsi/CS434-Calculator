@@ -23,6 +23,12 @@ public class OperationList {
             instance = new OperationList();
         return instance;
     }
+    public void add(Operation operation){
+        operations.add(operation);
+    }
+    public void remove(Operation operation){
+        operations.remove(operation);
+    }
     public boolean containsOp(final String type){
         return operations.stream().filter(o->o.getType().equals(type)).findFirst().isPresent();
     }
