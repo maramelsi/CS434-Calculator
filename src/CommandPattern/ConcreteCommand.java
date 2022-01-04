@@ -4,20 +4,24 @@ import FrameFactory.CalculatorGUI;
 import ListenersSimpleFactory.OperatorListener;
 import OperationStrategy.Operation;
 
+import java.util.ArrayList;
+
 public class ConcreteCommand implements Command{
-    private Operation operation;
+    ArrayList<Operation> operations;
+    private String operation;
     private String operand;
 
-    public ConcreteCommand(Operation operation, String operand){
+    public ConcreteCommand(ArrayList<Operation> operations, String operation, String operand){
+        this.operations = operations;
         this.operation = operation;
         this.operand = operand;
     }
 
-    public Operation getOperation() {
+    public String getOperation() {
         return operation;
     }
 
-    public void setOperation(Operation operation) {
+    public void setOperation(String operation) {
         this.operation = operation;
     }
 
@@ -31,12 +35,12 @@ public class ConcreteCommand implements Command{
 
     @Override
     public double execute() {
-        return operation.calculate(operand);
+        return Operation.calculate(operations, operation, operand);
     }
 
     @Override
-    public void unExecute() {
-
+    public double unExecute() {
+        return Operation.calculate(operations, undo(operation), operand);
     }
     public String undo(String operator){
         String undo;

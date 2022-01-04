@@ -54,7 +54,8 @@ public class OperatorListener implements ActionListener {
         operations.add(new LogOperation());
         operations.add(new COperation());
 
-        Operation.calculate(operations, e.getActionCommand(), displayText);
+        //Operation.calculate(operations, e.getActionCommand(), displayText);
+        app.compute(operations, e.getActionCommand(), displayText);
         textField.setText("" + result.getDoubleResult());
 
         }

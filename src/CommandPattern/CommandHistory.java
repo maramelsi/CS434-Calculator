@@ -1,14 +1,9 @@
 package CommandPattern;
 
-import FrameFactory.CalculatorGUI;
-import ListenersSimpleFactory.OperatorListener;
 import OperationStrategy.Operation;
-
 import java.util.ArrayList;
 
 public class CommandHistory {
-    private OperatorListener calculator;
-    private Command command;
     private ArrayList<Command> history = new ArrayList<>();
     private static int current = 0;
 
@@ -22,22 +17,21 @@ public class CommandHistory {
         }
     }
 
-    public void undo(int steps) {
+    public double undo(int steps) {
         for (int i = 0; i < steps; i++) {
             if (current >= 0) {
                 current--;
                 Command command = history.get(current);
-                command.unExecute();
+                return command.unExecute();
             }
         }
+        return 0;
     }
 
-    public double compute(Operation operation, String operand) {
-        Command command = new ConcreteCommand(operation, operand);
+    public double compute(ArrayList<Operation> operations, String operation, String operand) {
+        Command command = new ConcreteCommand(operations, operation, operand);
         history.add(command);
         current++;
         return command.execute();
-
-
     }
 }
