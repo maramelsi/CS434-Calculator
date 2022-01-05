@@ -20,7 +20,7 @@ public abstract class Operation {
   public abstract double calculate(String displayText);
 
   public static double calculate(String type,String displayText) {
-    return operations.operationType(type).calculate(displayText);
+    return OperationList.operationType(type).calculate(displayText);
   }
 
 }

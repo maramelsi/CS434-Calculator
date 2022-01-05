@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class OperationList {
     private static OperationList instance;
-    private static ArrayList<Operation> operations = new ArrayList<>();
+    private static final ArrayList<Operation> operations = new ArrayList<>();
 
     //constructor
     private OperationList(){

@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 
 public class TemperatureFrame extends Frame{
     JFrame frame = new JFrame();
-    private JPanel contentPane = new JPanel();
+    private final JPanel contentPane = new JPanel();
     private JTextField Celsius;
     private JTextField Fahrenheit;
     private JTextField toFOutput;
@@ -52,20 +52,18 @@ public class TemperatureFrame extends Frame{
 
         JButton btnC = new JButton("Convert");
         //addListener
-        btnC.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                if(Celsius.getText().isEmpty())
-                {
-                    toFOutput.setText("Please  Check your input");
-                }
-                else
-                {
-                    //toFOutput.setText(null);
-                    double cel = Double.parseDouble(Celsius.getText());
-                    double fa = cel * 1.8 +32;
-                    String far = String.format("%.2f",fa);
-                    Fahrenheit.setText(far);
-                }
+        btnC.addActionListener(e -> {
+            if(Celsius.getText().isEmpty())
+            {
+                toFOutput.setText("Please  Check your input");
+            }
+            else
+            {
+                //toFOutput.setText(null);
+                double cel = Double.parseDouble(Celsius.getText());
+                double fa = cel * 1.8 +32;
+                String far = String.format("%.2f",fa);
+                Fahrenheit.setText(far);
             }
         });
         btnC.setForeground(new Color(255, 255, 0));
@@ -76,20 +74,18 @@ public class TemperatureFrame extends Frame{
 
         JButton btnF = new JButton("Convert");
         //Add Listener
-        btnF.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                if(Fahrenheit.getText().isEmpty())
-                {
-                    toFOutput.setText("Please  Check your input");
-                }
-                else
-                {
-                    //toFOutput.setText(null);
-                    double far = Double.parseDouble(Fahrenheit.getText());
-                    double ce = far -32 /1.8 ;
-                    String cel = String.format("%.2f", ce);
-                    Celsius.setText(cel);
-                }
+        btnF.addActionListener(e -> {
+            if(Fahrenheit.getText().isEmpty())
+            {
+                toFOutput.setText("Please  Check your input");
+            }
+            else
+            {
+                //toFOutput.setText(null);
+                double far = Double.parseDouble(Fahrenheit.getText());
+                double ce = far -32 /1.8 ;
+                String cel = String.format("%.2f", ce);
+                Celsius.setText(cel);
             }
         });
         btnF.setForeground(Color.YELLOW);

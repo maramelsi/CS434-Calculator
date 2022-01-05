@@ -1,10 +1,9 @@
 package CommandPattern;
 
-import OperationStrategy.Operation;
 import java.util.ArrayList;
 
 public class CommandHistory {
-    private ArrayList<Command> history = new ArrayList<>();
+    private final ArrayList<Command> history = new ArrayList<>();
     private static int current = 0;
 
     public void redo(int steps) {
