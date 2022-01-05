@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 
 public class LengthFrame extends Frame{
     JFrame frame = new JFrame();
-    private JPanel contentPane = new JPanel();
+    private final JPanel contentPane = new JPanel();
     private JTextField meter;
     private JTextField Cm;
     private JTextField toFOutput;
@@ -52,20 +52,18 @@ public class LengthFrame extends Frame{
 
         JButton btnC = new JButton("Convert");
         //addListener
-        btnC.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                if(meter.getText().isEmpty())
-                {
-                    toFOutput.setText("Please  Check your input");
-                }
-                else
-                {
-                    //toFOutput.setText(null);
-                    double cel = Double.parseDouble(meter.getText());
-                    double fa = cel * 100 ;
-                    String far = String.format(String.valueOf(fa));
-                    Cm.setText(far);
-                }
+        btnC.addActionListener(e -> {
+            if(meter.getText().isEmpty())
+            {
+                toFOutput.setText("Please  Check your input");
+            }
+            else
+            {
+                //toFOutput.setText(null);
+                double cel = Double.parseDouble(meter.getText());
+                double fa = cel * 100 ;
+                String far = String.valueOf(fa);
+                Cm.setText(far);
             }
         });
         btnC.setForeground(new Color(255, 255, 0));
@@ -76,20 +74,18 @@ public class LengthFrame extends Frame{
 
         JButton btnF = new JButton("Convert");
         //Add Listener
-        btnF.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                if(Cm.getText().isEmpty())
-                {
-                    toFOutput.setText("Please  Check your input");
-                }
-                else
-                {
-                    //toFOutput.setText(null);
-                    double far = Double.parseDouble(Cm.getText());
-                    double ce = far /100 ;
-                    String cel = String.format(String.valueOf(ce));
-                    meter.setText(cel);
-                }
+        btnF.addActionListener(e -> {
+            if(Cm.getText().isEmpty())
+            {
+                toFOutput.setText("Please  Check your input");
+            }
+            else
+            {
+                //toFOutput.setText(null);
+                double far = Double.parseDouble(Cm.getText());
+                double ce = far /100 ;
+                String cel = String.valueOf(ce);
+                meter.setText(cel);
             }
         });
         btnF.setForeground(Color.YELLOW);

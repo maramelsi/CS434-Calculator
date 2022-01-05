@@ -4,7 +4,7 @@ import OperationStrategy.Operation;
 
 public class ConcreteCommand implements Command{
     private String operation;
-    private String operand;
+    private final String operand;
 
     public ConcreteCommand(String operation, String operand){
         this.operation = operation;
@@ -17,14 +17,6 @@ public class ConcreteCommand implements Command{
 
     public void setOperation(String operation) {
         this.operation = operation;
-    }
-
-    public String getOperand() {
-        return operand;
-    }
-
-    public void setOperand(String operand) {
-        this.operand = operand;
     }
 
     @Override

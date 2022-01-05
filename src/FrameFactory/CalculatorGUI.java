@@ -2,19 +2,15 @@ package FrameFactory;
 
 import ListenersSimpleFactory.NumberListener;
 import ListenersSimpleFactory.OperatorListener;
-import OperationStrategy.Operation;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
 
 public class CalculatorGUI extends Frame {
     JFrame frame = new JFrame();
     private final Font BIGGER_FONT = new Font("monospaced", Font.PLAIN, 20);
     JPanel pan = new JPanel();
     JPanel panel = new JPanel();
-    private boolean number = true;
-    private String equalOp = "=";
     JTextField textField = new JTextField("", 12);
     OperatorListener operatorListener = new OperatorListener(textField);
     NumberListener numberListener = new NumberListener(textField);
@@ -43,8 +39,8 @@ public class CalculatorGUI extends Frame {
         //Setting up the Operations Buttons
         panel.setLayout(new GridLayout(4, 4, 4, 4));
         String[] opOrder = {"+", "-", "*", "/","=","C","sin","cos","log","e","pi","RES"};
-        for (int i = 0; i < opOrder.length; i++) {
-            JButton button = new JButton(opOrder[i]);
+        for (String s : opOrder) {
+            JButton button = new JButton(s);
             //Add Action Listener Here
             button.addActionListener(operatorListener);
             button.setFont(BIGGER_FONT);
