@@ -30,6 +30,11 @@ public class UnitConversionGUI extends Frame implements ActionListener {
         temperatureButton.setForeground(Color.WHITE);
         temperatureButton.setBounds(100, 100, 250, 50);
         contentPane.add(temperatureButton);
+        lengthButton.addActionListener(this);
+        lengthButton.setBackground(Color.GRAY);
+        lengthButton.setForeground(Color.WHITE);
+        lengthButton.setBounds(100, 170, 250, 50);
+        contentPane.add(lengthButton);
     }
 
     @Override
