@@ -4,10 +4,14 @@ public class SubstractOperation extends Operation{
   public SubstractOperation() {
     super.type = "-";
   }
-
+  double sum =0;
   @Override
   public double calculate(String displayText) {
-    result.setDoubleResult(result.getDoubleResult()-convertToNumber(displayText));
+   sum = result.getDoubleResult() - convertToNumber(displayText);
+    result.setDoubleResult(sum);
+    System.out.println("SUb");
+   // System.out.println(result.getDoubleResult());
+
     return result.getDoubleResult();
   }
 

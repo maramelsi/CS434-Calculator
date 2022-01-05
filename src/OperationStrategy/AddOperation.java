@@ -7,9 +7,12 @@ public class AddOperation extends Operation {
     double sum =0;
     @Override
     public double calculate(String displayText){
-        result.setDoubleResult(result.getDoubleResult() + convertToNumber(displayText));
-        sum = result.getDoubleResult();
-        return sum;
+        sum = result.getDoubleResult() + convertToNumber(displayText);
+        result.setDoubleResult(sum);
+        System.out.println("ADD");
+        //System.out.println(result.getDoubleResult());
+
+        return result.getDoubleResult();
   }
 
     /*@Override

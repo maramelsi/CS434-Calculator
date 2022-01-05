@@ -11,6 +11,7 @@ public class Result {
     public void setDoubleResult(double total){
         this.total = total;
     }
+    public void clearResult(){this.total = 0;}
     public void setBool(boolean isNumber){
         this.isNumber = isNumber;
     }
