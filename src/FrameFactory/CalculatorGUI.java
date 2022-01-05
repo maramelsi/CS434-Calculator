@@ -1,10 +1,12 @@
 package FrameFactory;
 
+import ListenersSimpleFactory.ListenerFactory;
 import ListenersSimpleFactory.NumberListener;
 import ListenersSimpleFactory.OperatorListener;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class CalculatorGUI extends Frame {
     JFrame frame = new JFrame();
@@ -12,9 +14,9 @@ public class CalculatorGUI extends Frame {
     JPanel pan = new JPanel();
     JPanel panel = new JPanel();
     JTextField textField = new JTextField("", 12);
-    OperatorListener operatorListener = new OperatorListener(textField);
-    NumberListener numberListener = new NumberListener(textField);
-
+    ListenerFactory lf = new ListenerFactory();
+    ActionListener operatorListener = lf.getListener(ListenerFactory.ListenerType.Operation,textField);
+    ActionListener numberListener = lf.getListener(ListenerFactory.ListenerType.Number,textField);
     @Override
     void create() {
 
