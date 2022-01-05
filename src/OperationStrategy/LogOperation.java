@@ -5,6 +5,7 @@ import SingletonResult.Result;
 public class LogOperation extends Operation{
     public LogOperation() {
         super.type = "log";
+        super.binary = false;
     }
 
     @Override

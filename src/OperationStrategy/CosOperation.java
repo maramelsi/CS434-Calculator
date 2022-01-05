@@ -5,6 +5,7 @@ import ListenersSimpleFactory.OperatorListener;
 public class CosOperation extends Operation {
     public CosOperation() {
         super.type = "cos";
+        super.binary = false;
     }
    /* @Override
     public double calculate(double firstOperand) {

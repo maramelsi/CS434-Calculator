@@ -1,14 +1,16 @@
 package OperationStrategy;
 
+import ListenersSimpleFactory.OperatorListener;
+
 public class AddOperation extends Operation {
     public AddOperation() {
         super.type = "+";
+        super.binary = true;
     }
-    double sum =0;
+
     @Override
     public double calculate(String displayText){
-        sum = result.getDoubleResult() + convertToNumber(displayText);
-        result.setDoubleResult(sum);
+        result.setDoubleResult(result.getDoubleResult() + convertToNumber(displayText));
         System.out.println("ADD");
         //System.out.println(result.getDoubleResult());
 

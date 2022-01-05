@@ -3,6 +3,7 @@ package OperationStrategy;
 public class SubstractOperation extends Operation{
   public SubstractOperation() {
     super.type = "-";
+    super.binary = true;
   }
   double sum =0;
   @Override

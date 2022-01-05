@@ -3,6 +3,7 @@ package OperationStrategy;
 public class DivideOperation extends Operation{
   public DivideOperation() {
     super.type = "/";
+    super.binary = true;
   }
   @Override
   public double calculate(String displayText) {
