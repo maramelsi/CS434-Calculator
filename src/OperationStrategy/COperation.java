@@ -3,6 +3,7 @@ package OperationStrategy;
 public class COperation extends Operation{
     public COperation() {
         super.type = "C";
+        super.binary = false;
     }
 
     @Override

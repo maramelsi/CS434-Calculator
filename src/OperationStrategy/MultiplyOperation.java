@@ -5,6 +5,7 @@ import OperationStrategy.Operation;
 public class MultiplyOperation extends Operation {
   public MultiplyOperation() {
     super.type = "*";
+    super.binary = true;
   }
 
   @Override

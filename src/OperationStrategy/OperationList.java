@@ -33,7 +33,14 @@ public class OperationList {
     public boolean containsOp(final String type){
         return operations.stream().filter(o->o.getType().equals(type)).findFirst().isPresent();
     }
-
+    public static Boolean isBinary(String type){
+        for (var operation : operations) {
+            if (operation.getType().equals(type) && operation.getBinary()) {
+                return true;
+            }
+        }
+        return false;
+    }
     public static Operation operationType(String type){
 
         for (var operation : operations) {
