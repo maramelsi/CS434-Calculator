@@ -28,9 +28,9 @@ public class OperatorListener implements ActionListener {
                        app.compute(equalOp, displayText);
                    }
                     textField.setText("" + result.getDoubleResult());
-
                     System.out.println(result.getDoubleResult());
-                } else {
+                }
+                else {
                     result.setDoubleResult(Double.parseDouble(textField.getText()));
                     if(OperationList.isBinary(e.getActionCommand())){
                         equalOp = e.getActionCommand();
@@ -41,6 +41,7 @@ public class OperatorListener implements ActionListener {
                         number = false;
                         app.compute(e.getActionCommand(), displayText);
                     }
+                    textField.setText("");
                     System.out.println(result.getDoubleResult());
                 }
 

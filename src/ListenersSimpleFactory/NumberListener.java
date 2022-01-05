@@ -15,7 +15,7 @@ public class NumberListener implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        textField.setText("");
+
         String digit = e.getActionCommand();
         if (isNumber) {
             textField.setText(digit);
@@ -24,6 +24,7 @@ public class NumberListener implements ActionListener {
         }
         else {
             textField.setText(textField.getText()+digit);
+
         }
     }
 }
