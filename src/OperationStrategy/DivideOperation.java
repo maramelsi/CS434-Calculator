@@ -6,7 +6,7 @@ public class DivideOperation extends Operation{
   }
   @Override
   public double calculate(String displayText) {
-    result.setDoubleResult(result.getDoubleResult()-convertToNumber(displayText));
+    result.setDoubleResult(result.getDoubleResult()/convertToNumber(displayText));
     return result.getDoubleResult();
   }
 

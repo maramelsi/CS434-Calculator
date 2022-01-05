@@ -16,6 +16,7 @@ public class OperationList {
         operations.add(new CosOperation());
         operations.add(new LogOperation());
         operations.add(new COperation());
+       // operations.add(new EqualOperation());
     }
 
     public static OperationList getInstance(){

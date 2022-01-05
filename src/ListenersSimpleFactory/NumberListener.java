@@ -5,13 +5,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class NumberListener implements ActionListener {
-    JTextField textField;
+    JTextField textField ;
     boolean isNumber = true;
     public NumberListener(JTextField textfield){
         this.textField = textfield;
     }
     @Override
     public void actionPerformed(ActionEvent e) {
+        textField.setText("");
         String digit = e.getActionCommand();
         if (isNumber) {
             textField.setText(digit);
@@ -20,7 +21,5 @@ public class NumberListener implements ActionListener {
         else {
             textField.setText(textField.getText()+digit);
         }
-
-
     }
 }

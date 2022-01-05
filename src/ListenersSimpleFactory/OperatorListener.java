@@ -23,22 +23,20 @@ public class OperatorListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         String displayText = textField.getText();
-       /*if (e.getActionCommand().equals("sin")) {
-            result.setDoubleResult(Math.sin(Double.valueOf(displayText).doubleValue()));
+        if (e.getActionCommand().equals("=")) {
+            // result.setDoubleResult(Math.sin(Double.valueOf(displayText).doubleValue()));
             textField.setText("" + result.getDoubleResult());
-        } else if (e.getActionCommand().equals("cos")) {
-            result.setDoubleResult(Math.cos(Double.valueOf(displayText).doubleValue()));
+        }
+        else {
+            app.compute(e.getActionCommand(), displayText);
             textField.setText("" + result.getDoubleResult());
-        } else if (e.getActionCommand().equals("log")) {
-            result.setDoubleResult(Math.log(Double.valueOf(displayText).doubleValue()));
-            textField.setText("" + result.getDoubleResult());
-        } else if (e.getActionCommand().equals("C")) {
+        }
+         /*   if(result.getBool()){
+            result.setBool(true);
+            textField.setText("");
             result.setDoubleResult(0);
-        }*/
-
-        app.compute(e.getActionCommand(), displayText);
-        textField.setText("" + result.getDoubleResult());
-
+        }
+*/
         }
         //Helper function
     public static boolean isNumeric(String strNum) {
