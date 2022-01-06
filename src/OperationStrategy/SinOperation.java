@@ -16,4 +16,8 @@ public class SinOperation extends Operation {
         result.setDoubleResult(Math.sin(convertToNumber(displayText)));
         return result.getDoubleResult();
     }
+    @Override
+    public double undo(String displayText) {
+        return result.getDoubleResult();
+    }
 }

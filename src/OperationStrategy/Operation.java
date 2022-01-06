@@ -18,9 +18,13 @@ public abstract class Operation {
   }
 
   public abstract double calculate(String displayText);
+  public abstract double undo(String displayText);
 
   public static double calculate(String type,String displayText) {
     return OperationList.operationType(type).calculate(displayText);
+  }
+  public static double undo(String type, String displayText){
+    return OperationList.operationType(type).undo(displayText);
   }
 
 }

@@ -1,12 +1,10 @@
 package FrameFactory;
 
-import ListenersSimpleFactory.ListenerFactory;
 import ListenersSimpleFactory.NumberListener;
 import ListenersSimpleFactory.OperatorListener;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
 
 public class CalculatorGUI extends Frame {
     JFrame frame = new JFrame();
@@ -14,9 +12,9 @@ public class CalculatorGUI extends Frame {
     JPanel pan = new JPanel();
     JPanel panel = new JPanel();
     JTextField textField = new JTextField("", 12);
-    ListenerFactory lf = new ListenerFactory();
-    ActionListener operatorListener = lf.getListener(ListenerFactory.ListenerType.Operation,textField);
-    ActionListener numberListener = lf.getListener(ListenerFactory.ListenerType.Number,textField);
+    OperatorListener operatorListener = new OperatorListener(textField);
+    NumberListener numberListener = new NumberListener(textField);
+
     @Override
     void create() {
 
@@ -40,7 +38,7 @@ public class CalculatorGUI extends Frame {
         }
         //Setting up the Operations Buttons
         panel.setLayout(new GridLayout(4, 4, 4, 4));
-        String[] opOrder = {"+", "-", "*", "/","=","C","sin","cos","log","e","pi","RES"};
+        String[] opOrder = {"+", "-", "*", "/","=","C","sin","cos","log","e","pi","RES", "undo"};
         for (String s : opOrder) {
             JButton button = new JButton(s);
             //Add Action Listener Here

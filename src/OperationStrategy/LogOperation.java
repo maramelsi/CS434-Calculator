@@ -13,4 +13,8 @@ public class LogOperation extends Operation{
         result.setDoubleResult(Math.log(convertToNumber(displayText)));
         return result.getDoubleResult();
     }
+    @Override
+    public double undo(String displayText) {
+        return result.getDoubleResult();
+    }
 }

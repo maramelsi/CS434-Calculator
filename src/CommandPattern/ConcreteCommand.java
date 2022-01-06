@@ -26,28 +26,7 @@ public class ConcreteCommand implements Command{
 
     @Override
     public double unExecute() {
-        return Operation.calculate(undo(operation), operand);
+        return Operation.undo(operation, operand);
     }
-    public String undo(String operator){
-        String undo;
-        switch (operator) {
-            case "+":
-                undo = "-";
-                break;
-            case "-":
-                undo = "+";
-                break;
-            case "*":
-                undo = "/";
-                break;
-            case "/":
-                undo = "*";
-                break;
-            default:
-                undo = " ";
-                break;
-        }
-        return undo;
 
-    }
 }

@@ -17,9 +17,10 @@ public class AddOperation extends Operation {
         return result.getDoubleResult();
   }
 
-    /*@Override
-    public double calculate(double firstOperand, double secondOperand) {
-        result.setDoubleResult(firstOperand + secondOperand);
+    @Override
+    public double undo(String displayText) {
+        result.setDoubleResult(result.getDoubleResult() - convertToNumber(displayText));
         return result.getDoubleResult();
-    }*/
+    }
+
 }

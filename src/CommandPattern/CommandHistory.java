@@ -1,30 +1,22 @@
 package CommandPattern;
 
+import SingletonResult.Result;
+
 import java.util.ArrayList;
 
 public class CommandHistory {
-    private final ArrayList<Command> history = new ArrayList<>();
+    private ArrayList<Command> history = new ArrayList<>();
+    private Result result = Result.getInstance();
     private static int current = 0;
 
-    public void redo(int steps) {
-        for (int i = 0; i < steps; i++) {
-            if (current < history.size()) {
-                Command command = history.get(current);
-                current++;
-                command.execute();
-            }
-        }
-    }
-
-    public double undo(int steps) {
-        for (int i = 0; i < steps; i++) {
-            if (current >= 0) {
+    public double undo() {
+           if (current > 0) {
                 current--;
                 Command command = history.get(current);
+                history.remove(command);
                 return command.unExecute();
             }
-        }
-        return 0;
+       else return result.getDoubleResult();
     }
 
     public double compute(String operation, String operand) {

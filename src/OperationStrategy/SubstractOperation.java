@@ -15,10 +15,9 @@ public class SubstractOperation extends Operation{
 
     return result.getDoubleResult();
   }
-
-  /*@Override
-  public double calculate(double firstOperand, double secondOperand) {
-    result.setDoubleResult(firstOperand-secondOperand);
-    return result.getDoubleResult();
-  }*/
+    @Override
+    public double undo(String displayText) {
+        result.setDoubleResult(result.getDoubleResult() + convertToNumber(displayText));
+        return result.getDoubleResult();
+    }
 }

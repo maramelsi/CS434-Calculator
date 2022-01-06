@@ -8,7 +8,12 @@ public class COperation extends Operation{
 
     @Override
     public double calculate(String displayText) {
-        result.clearResult();
+       result.clearResult();
+        return result.getDoubleResult();
+    }
+    @Override
+    public double undo(String displayText) {
+        result.setDoubleResult(convertToNumber(displayText));
         return result.getDoubleResult();
     }
 }
